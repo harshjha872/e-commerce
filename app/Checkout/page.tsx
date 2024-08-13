@@ -51,7 +51,7 @@ export default function Component() {
             <div className="grid gap-4">
               {products.length > 0 &&
                 products.map((product) => (
-                  <SingleCheckoutCard product={product} />
+                  <SingleCheckoutCard key={product.id} product={product} />
                 ))}
             </div>
           </CardContent>

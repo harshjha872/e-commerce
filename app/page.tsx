@@ -18,6 +18,7 @@ export default function MainPage() {
         console.log(res.data.products);
         const productsFromApi = res.data.products.map((product: any) => (
           <ProductCard
+            key={product.id}
             id={product.id}
             productName={product.title}
             productDescription={product.description}

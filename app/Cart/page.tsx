@@ -84,7 +84,9 @@ const Cart = () => {
 
       {/* All items from cart are rendered here */}
       {products.length > 0 ? (
-        products.map((product) => <CartItem product={product} />)
+        products.map((product) => (
+          <CartItem key={product.id} product={product} />
+        ))
       ) : (
         <div>No products in cart</div>
       )}

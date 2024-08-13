@@ -59,6 +59,7 @@ const ProductCard = ({
         <div className="flex items-center justify-between">
           <span className="text-primary font-semibold">${productPrice}</span>
 
+          {/* Add to cart Icon */}
           <CirclePlus
             onClick={addProductToCart}
             size={26}

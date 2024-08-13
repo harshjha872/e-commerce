@@ -13,18 +13,19 @@ import {
 const CartItem = ({ product }: { product: singleProduct }) => {
   const dispatch = useAppDispatch();
   return (
-    <Card className="grid grid-cols-[100px_1fr_100px] items-center gap-4 p-4 my-4">
+    <Card className="grid grid-cols-[200px_1fr_100px] items-center gap-4 p-4 my-4 pr-12">
       <Image
         src={product.productImage}
         alt="productImage"
-        width={100}
-        height={100}
+        width={300}
+        height={300}
         className="rounded-lg object-cover"
-        style={{ aspectRatio: "100/100", objectFit: "cover" }}
+        style={{ aspectRatio: "300/300", objectFit: "cover" }}
       />
       <div className="grid gap-1">
         <h3 className="font-medium mb-2">{product.productName}</h3>
         <div className="flex items-center gap-2">
+          {/* Decrease quantity */}
           <Button
             variant="outline"
             size="icon"
@@ -33,6 +34,8 @@ const CartItem = ({ product }: { product: singleProduct }) => {
             <MinusIcon className="w-4 h-4" />
           </Button>
           <span>{product.quantity}</span>
+
+          {/* Increase quantity */}
           <Button
             variant="outline"
             size="icon"
@@ -43,7 +46,10 @@ const CartItem = ({ product }: { product: singleProduct }) => {
         </div>
       </div>
       <div className="text-right font-medium">
+        {/* total price of that product */}
         <div className="mb-2">${product.totalPrice.toFixed(2)}</div>
+
+        {/* Remove item from cart */}
         <Button
           variant="destructive"
           color="red"
